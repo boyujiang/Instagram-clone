@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar">
+        <include layout="@layout/snippet_top_share_toolbar"></include>
+    </RelativeLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/postimage"
+        android:layout_below="@id/toolbar"
+        android:background="@drawable/edit_data_background"
+        android:text="Click To post Image"
+        android:onClick="share">
+    </Button>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="100"
+        android:orientation="vertical"
+        android:layout_below="@id/postimage"
+        android:layout_marginBottom="50dp"
+        android:id="@+id/linearLay">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="60">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/preview"
+                android:scaleType="centerCrop"/>
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/comment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="40"
+            android:inputType="text"
+            android:hint="Comment if you want."/>
+
+    </LinearLayout>
+
+    <include layout="@layout/layout_bottom_navbar"></include>
+
+</RelativeLayout>
